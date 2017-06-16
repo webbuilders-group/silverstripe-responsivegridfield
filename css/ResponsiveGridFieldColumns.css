@@ -1,0 +1,58 @@
+@media only screen and (max-width: 767px) {
+    /**** GridField General ****/
+    .ss-gridfield.responsive thead tr.sortable-header, .ss-gridfield.responsive thead tr.ss-gridfield-title-header {
+        display: none;
+    }
+    
+    .ss-gridfield.responsive tbody tr {
+        display: block;
+        
+        position: relative;
+    }
+    
+    .ss-gridfield.responsive tbody tr td {
+        display: block;
+        
+        max-width: none;
+        
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .ss-gridfield.responsive tbody tr td.col-reorder {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+    
+    .ss-gridfield.responsive tbody tr td:before {
+        font-weight: bold;
+        
+        content: attr(data-col-title) " ";
+    }
+    
+    .ss-gridfield.responsive tbody tr td.col-buttons {
+        width: auto;
+        
+        padding: 8px 8px;
+        
+        text-align: left;
+        
+        cursor: default;
+    }
+    
+    .ss-gridfield.responsive tbody tr td.col-buttons:before {
+        content: "Actions ";
+    }
+    
+    .ss-gridfield.responsive tbody tr td.col-buttons a, .ss-gridfield.responsive tbody tr td.col-buttons button {
+        padding: 8px;
+        
+        vertical-align: middle !important;
+    }
+    
+    /**** GridField Orderable Rows ****/
+    .ss-gridfield.responsive.ss-gridfield-orderable tbody tr td, .ss-gridfield.responsive.ss-gridfield-orderable tbody tr td.col-buttons {
+        padding-left: 25px;
+    }
+}
