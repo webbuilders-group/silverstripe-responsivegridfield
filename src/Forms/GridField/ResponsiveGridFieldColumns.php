@@ -1,13 +1,21 @@
 <?php
-class ResponsiveGridFieldColumns implements GridField_ColumnProvider {
+namespace WebbuildersGroup\ResponsiveGridField\Forms\GridField;
+
+use SilverStripe\Forms\GridField\GridFieldDataColumns;
+use SilverStripe\Forms\GridField\GridField_ColumnProvider;
+use SilverStripe\View\Requirements;
+
+class ResponsiveGridFieldColumns implements GridField_ColumnProvider
+{
     private $_field_titles;
     
     /**
      * Constructor
      * @param array $titlesMap Map of column name to labels
      */
-    public function __construct($titlesMap=array()) {
-        $this->_field_titles=$titlesMap;
+    public function __construct($titlesMap = [])
+    {
+        $this->_field_titles = $titlesMap;
     }
     
     /**
@@ -15,8 +23,9 @@ class ResponsiveGridFieldColumns implements GridField_ColumnProvider {
      * @param array $titlesMap Map of column name to labels
      * @return ResponsiveGridFieldColumns
      */
-    public function setFieldTitles($titlesMap) {
-        $this->_field_titles=$titlesMap;
+    public function setFieldTitles($titlesMap)
+    {
+        $this->_field_titles = $titlesMap;
         
         return $this;
     }
@@ -25,7 +34,8 @@ class ResponsiveGridFieldColumns implements GridField_ColumnProvider {
      * Gets the field titles to use in place of the title for the display field
      * @return array Map of column name to labels
      */
-    public function getFieldTitles() {
+    public function getFieldTitles()
+    {
         return $this->_field_titles;
     }
     
@@ -34,12 +44,13 @@ class ResponsiveGridFieldColumns implements GridField_ColumnProvider {
      * @param GridField $gridField GridField reference
      * @return array
      */
-    public function getColumnsHandled($gridField) {
-        Requirements::css(RESPONSIVE_GRIDFIELD_BASE.'/css/ResponsiveGridFieldColumns.css');
+    public function getColumnsHandled($gridField)
+    {
+        Requirements::css('webbuilders-group/silverstripe-responsivegridfield: css/ResponsiveGridFieldColumns.css');
         
         $gridField->addExtraClass('responsive');
         
-        return array_keys($gridField->getConfig()->getComponentByType('GridFieldDataColumns')->getDisplayFields($gridField));
+        return array_keys($gridField->getConfig()->getComponentByType(GridFieldDataColumns::class)->getDisplayFields($gridField));
     }
     
     /**
@@ -49,17 +60,18 @@ class ResponsiveGridFieldColumns implements GridField_ColumnProvider {
      * @param string $columnName Name of the current column
      * @return array
      */
-    public function getColumnAttributes($gridField, $record, $columnName) {
-        if(array_key_exists($columnName, $this->_field_titles)) {
-            return array('data-col-title'=>$this->_field_titles[$columnName]);
-        }else {
-            $columnMeta=$gridField->getConfig()->getComponentByType('GridFieldDataColumns')->getColumnMetadata($gridField, $columnName);
-            if(array_key_exists('title', $columnMeta) && !empty($columnMeta['title'])) {
-                return array('data-col-title'=>$columnMeta['title']);
+    public function getColumnAttributes($gridField, $record, $columnName)
+    {
+        if (array_key_exists($columnName, $this->_field_titles)) {
+            return ['data-col-title' => $this->_field_titles[$columnName]];
+        } else {
+            $columnMeta = $gridField->getConfig()->getComponentByType(GridFieldDataColumns::class)->getColumnMetadata($gridField, $columnName);
+            if (array_key_exists('title', $columnMeta) && !empty($columnMeta['title'])) {
+                return ['data-col-title' => $columnMeta['title']];
             }
         }
         
-        return array();
+        return [];
     }
     
     /**
@@ -68,8 +80,9 @@ class ResponsiveGridFieldColumns implements GridField_ColumnProvider {
      * @param string $columnName Name of the current column
      * @return array
      */
-    public function getColumnMetadata($gridField, $columnName) {
-        return array();
+    public function getColumnMetadata($gridField, $columnName)
+    {
+        return [];
     }
     
     /**
@@ -77,7 +90,9 @@ class ResponsiveGridFieldColumns implements GridField_ColumnProvider {
      * @param GridField $gridField GridField reference
      * @param array $columns List of columns
      */
-    public function augmentColumns($gridField, &$columns) {}
+    public function augmentColumns($gridField, &$columns)
+    {
+    }
     
     /**
      * HTML for the column, content of the <td> element.
@@ -86,8 +101,8 @@ class ResponsiveGridFieldColumns implements GridField_ColumnProvider {
      * @param string $columnName Name of the current column
      * @return string HTML for the column. Return NULL to skip.
      */
-    public function getColumnContent($gridField, $record, $columnName) {
+    public function getColumnContent($gridField, $record, $columnName)
+    {
         return null;
     }
 }
-?>
