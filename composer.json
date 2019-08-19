@@ -16,6 +16,14 @@
         "silverstripe/framework": "~4.3",
         "webbuilders-group/silverstripe-frontendgridfield": "~2.0"
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        },
+        "expose": [
+            "css"
+        ]
+    },
     "support": {
         "issues": "https://github.com/webbuilders-group/silverstripe-responsivegridfield/issues"
     },
