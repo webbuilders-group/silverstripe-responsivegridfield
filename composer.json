@@ -1,7 +1,7 @@
 {
     "name": "webbuilders-group/silverstripe-responsivegridfield",
     "description": "Responsive addon for frontendgridfield that makes a SilverStripe GridField work better on various screensizes.",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "gridfield", "responsive"],
     "license": "BSD-3-Clause",
     "authors": [
