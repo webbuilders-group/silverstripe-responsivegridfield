@@ -13,7 +13,7 @@
     ],
     "require":
     {
-        "silverstripe/framework": "~4.3",
+        "silverstripe/framework": "~4.3|~5.0",
         "webbuilders-group/silverstripe-frontendgridfield": "~2.0"
     },
     "extra": {
