@@ -13,8 +13,8 @@
     ],
     "require":
     {
-        "silverstripe/framework": "~4.3|~5.0",
-        "webbuilders-group/silverstripe-frontendgridfield": "~2.0"
+        "silverstripe/framework": "~4.3|~5.0|~6.0",
+        "webbuilders-group/silverstripe-frontendgridfield": "~2.0|~3.0"
     },
     "extra": {
         "branch-alias": {

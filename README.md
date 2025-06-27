@@ -6,8 +6,8 @@ Responsive addon for frontendgridfield that makes a SilverStripe GridField work 
 * Ed Chipman ([UndefinedOffset](https://github.com/UndefinedOffset))
 
 ## Requirements
-* SilverStripe Framework 4.3+ | 5.0+
-* [webbuilders-group/silverstripe-frontendgridfield](https://github.com/webbuilders-group/silverstripe-frontendgridfield)
+* SilverStripe Framework ~4.3|~5.0|~6.0
+* [webbuilders-group/silverstripe-frontendgridfield](https://github.com/webbuilders-group/silverstripe-frontendgridfield) ~2.0|~3.0
 
 
 ## Installation
